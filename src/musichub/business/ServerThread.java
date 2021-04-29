@@ -23,6 +23,7 @@ public class ServerThread extends Thread {
 
             JMusicHub jmusichub = new JMusicHub();
             output.writeObject(jmusichub);
+            jmusichub.ServerHub();
 
             String text = (String)input.readObject();  //read the object received through the stream and deserialize it
             System.out.println("server received a text:" + text);

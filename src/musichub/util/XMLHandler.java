@@ -1,5 +1,6 @@
 package musichub.util;
 
+import java.io.Serializable;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;

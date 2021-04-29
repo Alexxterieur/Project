@@ -25,7 +25,7 @@ public class FirstClient extends AbstractClient{
             output.writeObject(textToSend);	*/	//serialize and write the String to the stream
 
             JMusicHub jmusichub = (JMusicHub) input.readObject();	//deserialize and read the Student object from the stream
-            jmusichub.Hub();
+            jmusichub.ClientHub();
 
         } catch  (UnknownHostException uhe) {
             uhe.printStackTrace();

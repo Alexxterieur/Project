@@ -1,31 +1,32 @@
 package musichub.business;
 
+import java.io.Serializable;
 import java.util.*;
 import musichub.util.*;
 import org.w3c.dom.*;
 
-class SortByDate implements Comparator<Album>
+class SortByDate implements Comparator<Album>,Serializable
 {
 	public int compare(Album a1, Album a2) {
 			return a1.getDate().compareTo(a2.getDate());
 	} 
 }
 
-class SortByGenre implements Comparator<Song>
+class SortByGenre implements Comparator<Song>, Serializable
 {
 	public int compare(Song s1, Song s2) {
 			return s1.getGenre().compareTo(s2.getGenre());
 	} 
 }
 
-class SortByAuthor implements Comparator<AudioElement>
+class SortByAuthor implements Comparator<AudioElement>,Serializable
 {
 	public int compare(AudioElement e1, AudioElement e2) {
 			return e1.getArtist().compareTo(e2.getArtist());
 	} 
 }
 	
-public class MusicHub {
+public class MusicHub implements Serializable{
 	private List<Album> albums;
 	private List<PlayList> playlists;
 	private List<AudioElement> elements;
