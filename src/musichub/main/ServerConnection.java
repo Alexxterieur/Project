@@ -8,9 +8,8 @@ import java.net.*;
 public class ServerConnection
 {
     public static void main (String[] args) {
-        Server s = new Server();
+        Server s = Server.getInstance();
         String ip = "localhost";
         s.connect(ip);
-
     }
 }

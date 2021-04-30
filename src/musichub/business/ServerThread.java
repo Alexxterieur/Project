@@ -23,10 +23,12 @@ public class ServerThread extends Thread {
 
             JMusicHub jmusichub = new JMusicHub();
             output.writeObject(jmusichub);
-            jmusichub.ServerHub();
 
-            String text = (String)input.readObject();  //read the object received through the stream and deserialize it
-            System.out.println("server received a text:" + text);
+            JMusicHub jmusichub2 = new JMusicHub();
+            jmusichub2.ServerHub();
+
+            /*String text = (String)input.readObject();  //read the object received through the stream and deserialize it
+            System.out.println("server received a text:" + text);*/
 
             /*Student student = new Student(1234, "john.doe");
             output.writeObject(student);	*/	//serialize and write the Student object to the stream
@@ -35,10 +37,10 @@ public class ServerThread extends Thread {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
 
-        } catch (ClassNotFoundException ex) {
+        } /*catch (ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
-        } finally {
+        }*/finally {
             try {
                 output.close();
                 input.close();

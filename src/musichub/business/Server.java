@@ -5,8 +5,15 @@ import java.net.*;
 
 public class Server
 {
+    private static Server uniqueInstance=null;
     private String ip = "localhost";
     private ServerSocket ss;
+
+    public static synchronized Server getInstance(){
+        if (uniqueInstance==null)
+            uniqueInstance = new Server();
+        return uniqueInstance;
+    }
 
     public void connect(String ip) {
         try {
